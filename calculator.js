@@ -1,10 +1,7 @@
 // Calculator
 // Michael McClure
-// *** Clicks, push to array works
-// *** calc() is in progress
 window.onload = function() {
-  var container = [];
-  var equation = []
+  var equation = "";
   var one = document.getElementById("one");
   var two = document.getElementById("two");
   var three = document.getElementById("three");
@@ -24,113 +21,70 @@ window.onload = function() {
 
 // Click Numbers
   one.onclick = function(event) {
-      container.push(one.innerHTML);
-      alert(container);
+      equation += (one.innerHTML);
+      alert(equation);
   }
   two.onclick = function(event) {
-      container.push(two.innerHTML);
-      alert(container);
+      equation += (two.innerHTML);
+      alert(equation);
   }
   three.onclick = function(event) {
-      container.push(three.innerHTML);
-      alert(container);
+      equation += (three.innerHTML);
+      alert(equation);
   }
   four.onclick = function(event) {
-      container.push(four.innerHTML);
-      alert(container);
+      equation += (four.innerHTML);
+      alert(equation);
   }
   five.onclick = function(event) {
-      container.push(five.innerHTML);
-      alert(container);
+      equation += (five.innerHTML);
+      alert(equation);
   }
   six.onclick = function(event) {
-      container.push(six.innerHTML);
-      alert(container);
+      equation += (six.innerHTML);
+      alert(equation);
   }
   seven.onclick = function(event) {
-      container.push(seven.innerHTML);
-      alert(container);
+      equation += (seven.innerHTML);
+      alert(equation);
   }
   eight.onclick = function(event) {
-      container.push(eight.innerHTML);
-      alert(container);
+      cequation += (eight.innerHTML);
+      alert(equation);
   }
   nine.onclick = function(event) {
-      container.push(nine.innerHTML);
-      alert(container);
+      equation += (nine.innerHTML);
+      alert(equation);
   }
   zero.onclick = function(event) {
-      container.push(zero.innerHTML);
-      alert(container);
+      equation += (zero.innerHTML);
+      alert(equation);
   }
-// Click Operations
+// Click Operands
   add.onclick = function(event) {
-      equation.push(parseInt(container.join("")));
-      equation.push(add.innerHTML);
-      container = [];
-      alert(equation); // *** Call calc() when working ***
+      equation += (" + ");
+      alert(equation);
   }
   subtract.onclick = function(event) {
-      equation.push(parseInt(container.join("")));
-      equation.push(subtract.innerHTML);
-      container = [];
+      equation += (" - ");
       alert(equation);
   }
   multiply.onclick = function(event) {
-      equation.push(parseInt(container.join("")));
-      equation.push(multiply.innerHTML);
-      container = [];
+      equation += (" * ");
       alert(equation);
   }
   divide.onclick = function(event) {
-      equation.push(parseInt(container.join("")));
-      equation.push(divide.innerHTML);
-      container = [];
+      equation += (" / ");
       alert(equation);
   }
 // Click Finals
   clear.onclick = function(event) {
-      container = [];
-      equation = [];
+      equation = "";
       alert("Memory Cleared!");
   }
   enter.onclick = function(event) {
-      alert(enter.innerHTML);
+      alert(eval(equation));
   }
    
-// Calculation  *** In Progress ***
-var array = [20,"+",20,"-",10]
-
-var calc = function(equation){
-  for (var num in equation) {
-    switch (equation[num]) {
-      case "+": 
-        var container = (equation[0] + equation[2]);
-        equation = equation.splice(0, 3,); // *** Not working!!! Why?
-console.log(equation); // test print
-
-        equation.unshift(container);
-console.log(equation); // test print
-        break;
-      case "-": 
-        var container = (equation[0] - equation[2]);
-        equation = equation.splice(0, 3);// *** Not working!!! Why?
-        equation.unshift(container);
-        break;
-      case "*": 
-        var container = (equation[0] * equation[2]);
-        equation = equation.splice(0, 3);// *** Not working!!! Why?
-        equation.unshift(container);
-        break;
-      case "/": 
-        var container = (equation[0] / equation[2]);
-        equation = equation.splice(0, 3); // *** Not working!!! Why?
-        equation.unshift(container);
-        break;
-    };
-  };
-
-  return container;
-}
 
 }
